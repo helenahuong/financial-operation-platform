@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# Financial Operations Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive financial operations dashboard built with React, TypeScript, and Tailwind CSS. It provides real-time visibility into organizational finances — including budgets, invoices, vendor charges, disputes, and cost center performance — through interactive charts, data tables, and KPI cards.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Global Financial Overview
+- KPI cards for total revenue, expenses, net profit, active vendors, and pending invoices
+- Donut charts for sales volume and margin by region
+- Regional summary cards with YTD spend and vendor counts
+- Budget utilization heatmap across regions and departments
 
-## React Compiler
+### Charge Flow Explorer
+- **Internal Program Charges** — service-level breakdown by department with usage, unit rates, and costs
+- **Vendor & Supplier Charges** — contract values, YTD spend, and invoice counts per vendor
+- **Cost Center Drill-Down** — budget vs. actual spend with variance and utilization tracking
+- Toggle between table and chart views; advanced filtering by date range, department, spend range, and status
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Invoice Management
+- Invoice summary table with search, status filters, and department filters
+- Detailed invoice view with line items, vendor info, approval history, payment terms, and attachments
+- Bulk actions and export support
+- Per-row actions: approve, reject, download, comment
 
-## Expanding the ESLint configuration
+### Dispute Management
+- Dashboard with KPIs (open disputes, total amount, resolution rate, avg. days open)
+- SLA performance horizontal bar chart
+- Team workload overview with case counts and load status
+- Active disputes table with priority, status, and assignment tracking
+- Form to raise new disputes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Configuration
+- Service & pricing setup with unit rate, component rate, and lease rate models
+- Effective date management for scheduled price changes
+- Usage data upload (CSV, XLSX, JSON)
+- Vendor mapping and user access/roles (coming soon)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Reports & Forecasting
+- Placeholder for upcoming reporting and forecasting tools
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Layer | Technology |
+|---|---|
+| Framework | React 19 |
+| Language | TypeScript 5.9 |
+| Build Tool | Vite 6 |
+| Styling | Tailwind CSS 4 |
+| Routing | React Router 6 |
+| State Management | Zustand |
+| Charts | Recharts |
+| Icons | Lucide React |
+| Forms | React Hook Form + Zod |
+| Tables | TanStack Table |
+| HTTP | Axios |
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/helenahuong/financial-operation-platform.git
+cd financial-operation-platform
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Opens the app at [http://localhost:5173](http://localhost:5173).
+
+### Build
+
+```bash
+npm run build
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── features/       # Feature-specific components (filters, charts, invoice details)
+│   ├── layout/         # App shell, navigation, page headers
+│   └── ui/             # Reusable UI primitives (tables, charts, cards, modals)
+├── data/               # Static/mock data for each module
+├── pages/              # Page-level components (one per route)
+├── stores/             # Zustand state stores
+├── types/              # TypeScript type definitions
+└── utils/              # Formatting helpers and status color utilities
 ```
