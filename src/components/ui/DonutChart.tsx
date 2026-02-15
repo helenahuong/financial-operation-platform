@@ -28,7 +28,7 @@ export default function DonutChart({ data, centerLabel, centerValue, height = 25
               ))}
             </Pie>
             <Tooltip
-              formatter={(value: number) => [`${value}%`, '']}
+              formatter={(value: number | undefined) => [`${value ?? 0}%`, '']}
               contentStyle={{ borderRadius: '8px', border: '1px solid #E2E8F0' }}
             />
           </PieChart>

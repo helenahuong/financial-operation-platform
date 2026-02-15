@@ -1,4 +1,4 @@
-import type { DepartmentSummary, ServiceCharge } from '@/types';
+import type { DepartmentSummary, ServiceCharge, VendorCharge, CostCenterCharge } from '@/types';
 
 export const departmentSummaries: DepartmentSummary[] = [
   { name: 'Engineering', spend: '$485K', change: '+5.2%', changePositive: true, services: 12, projects: 34, icon: 'Settings' },
@@ -59,16 +59,6 @@ export const serviceCharges: ServiceCharge[] = [
 ];
 
 // Vendor Supplier Charges tab data
-export interface VendorCharge {
-  sNo: number;
-  vendor: string;
-  category: string;
-  contractValue: string;
-  ytdSpend: string;
-  invoiceCount: number;
-  status: 'Active' | 'Inactive' | 'Under Review';
-}
-
 export const vendorSummaries: DepartmentSummary[] = [
   { name: 'Pan Asia LTD', spend: '$312K', change: '+7.8%', changePositive: true, services: 5, projects: 14, icon: 'Building2' },
   { name: 'Tang Spares LLP', spend: '$198K', change: '+2.3%', changePositive: true, services: 3, projects: 9, icon: 'Building2' },
@@ -96,18 +86,6 @@ export const vendorCharges: VendorCharge[] = [
 ];
 
 // Cost Center Drill-Down tab data
-export interface CostCenterCharge {
-  sNo: number;
-  costCenter: string;
-  department: string;
-  budget: string;
-  actualSpend: string;
-  variance: string;
-  variancePositive: boolean;
-  utilization: number;
-  status: 'Under Budget' | 'On Track' | 'Over Budget';
-}
-
 export const costCenterSummaries: DepartmentSummary[] = [
   { name: 'CC-1001 R&D', spend: '$620K', change: '+3.2%', changePositive: true, services: 18, projects: 42, icon: 'FlaskConical' },
   { name: 'CC-2001 Ops', spend: '$445K', change: '-0.8%', changePositive: false, services: 12, projects: 28, icon: 'Cog' },

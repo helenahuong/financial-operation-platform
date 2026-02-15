@@ -130,6 +130,7 @@ export interface InvoiceLineItem {
   unitPrice: string;
   amount: string;
   glAccount: string;
+  [key: string]: unknown;
 }
 
 export interface VendorDetails {
