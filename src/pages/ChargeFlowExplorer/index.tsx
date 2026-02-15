@@ -242,8 +242,8 @@ export default function ChargeFlowExplorer() {
           {activeTab === 'internal' && (
             <div className="bg-white border border-border rounded-xl p-6">
               <DataTable
-                data={filteredServiceCharges as unknown as Record<string, unknown>[]}
-                columns={serviceColumns as Column<Record<string, unknown>>[]}
+                data={filteredServiceCharges}
+                columns={serviceColumns}
                 pageSize={6}
               />
             </div>
@@ -252,8 +252,8 @@ export default function ChargeFlowExplorer() {
           {activeTab === 'vendor' && (
             <div className="bg-white border border-border rounded-xl p-6">
               <DataTable
-                data={vendorCharges as unknown as Record<string, unknown>[]}
-                columns={vendorColumns as Column<Record<string, unknown>>[]}
+                data={vendorCharges}
+                columns={vendorColumns}
                 pageSize={6}
               />
             </div>
@@ -262,8 +262,8 @@ export default function ChargeFlowExplorer() {
           {activeTab === 'costcenter' && (
             <div className="bg-white border border-border rounded-xl p-6">
               <DataTable
-                data={costCenterCharges as unknown as Record<string, unknown>[]}
-                columns={costCenterColumns as Column<Record<string, unknown>>[]}
+                data={costCenterCharges}
+                columns={costCenterColumns}
                 pageSize={6}
               />
             </div>

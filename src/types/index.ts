@@ -40,6 +40,7 @@ export interface ServiceCharge {
   unitRate: string;
   totalCost: string;
   status: 'Active' | 'Inactive';
+  [key: string]: unknown;
 }
 
 export interface DepartmentSummary {
@@ -59,6 +60,7 @@ export interface Invoice {
   amount: string;
   date: string;
   status: InvoiceStatus;
+  [key: string]: unknown;
 }
 
 export interface Dispute {
@@ -71,6 +73,7 @@ export interface Dispute {
   priority: Priority;
   status: Status;
   daysOpen: number;
+  [key: string]: unknown;
 }
 
 export interface TeamMember {
@@ -104,6 +107,7 @@ export interface VendorCharge {
   ytdSpend: string;
   invoiceCount: number;
   status: 'Active' | 'Inactive' | 'Under Review';
+  [key: string]: unknown;
 }
 
 export interface CostCenterCharge {
@@ -116,6 +120,7 @@ export interface CostCenterCharge {
   variancePositive: boolean;
   utilization: number;
   status: 'Under Budget' | 'On Track' | 'Over Budget';
+  [key: string]: unknown;
 }
 
 export interface InvoiceLineItem {

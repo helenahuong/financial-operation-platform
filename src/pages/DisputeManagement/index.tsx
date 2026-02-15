@@ -144,8 +144,8 @@ export default function DisputeManagement() {
               </div>
             </div>
             <DataTable
-              data={disputes as unknown as Record<string, unknown>[]}
-              columns={columns as Column<Record<string, unknown>>[]}
+              data={disputes}
+              columns={columns}
               pageSize={5}
               renderRowActions={() => (
                 <div className="flex items-center gap-2">

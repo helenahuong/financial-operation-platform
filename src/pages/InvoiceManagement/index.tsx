@@ -178,11 +178,11 @@ export default function InvoiceManagement() {
           {/* Invoice Table */}
           <div className="bg-white border border-border rounded-xl p-6">
             <DataTable
-              data={filteredInvoices as unknown as Record<string, unknown>[]}
-              columns={columns as Column<Record<string, unknown>>[]}
+              data={filteredInvoices}
+              columns={columns}
               pageSize={6}
               enableSelection={activeTab === 'bulk'}
-              renderRowActions={(row) => <InvoiceRowActions row={row as unknown as Invoice} />}
+              renderRowActions={(row) => <InvoiceRowActions row={row as Invoice} />}
             />
           </div>
         </>
